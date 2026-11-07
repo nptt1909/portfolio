@@ -385,6 +385,250 @@ header {
     justify-content: center;
 }
 
+.deliverables-section {
+    margin-top: 70px;
+    padding-top: 20px;
+}
+
+.deliverables-intro {
+    margin: 0 0 35px;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.deliverable-card {
+    display: flex;
+    min-height: 190px;
+    padding: 28px;
+    border: 1px solid #d9d9d9;
+    flex-direction: column;
+    background: #fff;
+}
+
+.deliverable-number {
+    margin: 0 0 14px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.deliverable-card h3 {
+    margin: 0 0 28px;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.deliverable-link {
+    width: fit-content;
+    margin-top: auto;
+    padding: 0 0 4px;
+    border: 0;
+    border-bottom: 1px solid #000;
+    color: #000;
+    background: transparent;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.deliverable-link:hover,
+.deliverable-link:focus-visible {
+    color: #000;
+    border-color: #000;
+}
+
+.deliverable-modal {
+    width: min(900px, calc(100% - 40px));
+    max-height: 86vh;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    color: #000;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.deliverable-modal::backdrop {
+    background: rgba(0, 0, 0, 0.62);
+}
+
+.deliverable-modal-content {
+    max-height: calc(86vh - 72px);
+    padding: 36px;
+    overflow-y: auto;
+}
+
+.deliverable-modal-header {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.deliverable-modal-header h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.modal-close {
+    padding: 0 4px;
+    border: 0;
+    color: #000;
+    background: transparent;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-lead {
+    margin-bottom: 28px;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.modal-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.deliverable-modal h3 {
+    margin-bottom: 10px;
+}
+
+.deliverable-modal li {
+    margin-bottom: 8px;
+    line-height: 1.45;
+}
+
+.process-workflow {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #000;
+    color: #000;
+}
+
+.process-workflow h3 {
+    margin: 0 0 22px;
+    color: #000;
+    font-size: 22px;
+}
+
+.process-diagram {
+    margin: 0 0 30px;
+}
+
+.process-diagram figcaption {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.process-diagram a {
+    display: block;
+    border: 1px solid #000;
+    background: #fff;
+}
+
+.process-diagram img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: invert(1);
+}
+
+.deliverable-table-wrap {
+    margin-top: 24px;
+    overflow-x: auto;
+}
+
+.deliverable-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.deliverable-table th,
+.deliverable-table td {
+    padding: 13px;
+    border: 1px solid #d8d8d8;
+    vertical-align: top;
+}
+
+.deliverable-table th {
+    background: #eef5f0;
+}
+
+.governance-table th {
+    color: #000;
+    background: #ededed;
+}
+
+.uat-table-wrap {
+    max-height: 62vh;
+    border: 1px solid #d8d8d8;
+    overflow: auto;
+}
+
+.uat-table {
+    min-width: 1350px;
+    font-size: 14px;
+}
+
+.uat-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    color: #000;
+    background: #ededed;
+}
+
+.uat-table th:nth-child(1),
+.uat-table td:nth-child(1) {
+    width: 160px;
+}
+
+.uat-table th:nth-child(2),
+.uat-table td:nth-child(2) {
+    width: 180px;
+}
+
+.uat-table th:nth-child(3),
+.uat-table td:nth-child(3) {
+    width: 180px;
+}
+
+.uat-table th:nth-child(4),
+.uat-table td:nth-child(4) {
+    width: 330px;
+}
+
+.uat-table th:nth-child(5),
+.uat-table td:nth-child(5) {
+    width: 230px;
+}
+
+@media (max-width: 760px) {
+    .deliverables-grid,
+    .modal-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .deliverable-modal-content {
+        padding: 24px;
+    }
+}
+
 .skill-item {
     display: flex;
 }

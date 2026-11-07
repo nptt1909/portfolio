@@ -31,13 +31,17 @@
                 <img src="asset/images/farm-time-logo.png" alt="Farm Time Management System logo">
             </div>
             <div class="summary">
-                <p><em>Project description:</em> On-premises HR &amp; Payroll System for an agricultural business,
+                <p><strong><em>Project description:</em></strong> On-premises HR &amp; Payroll System for an agricultural business,
                     replacing a paper-based rostering and wage calculation system with a digital solution covering
                     clock in/out, timesheet management, payroll processing, and compliance reporting.</p>
-                <p><em>Project type:</em> Academic Project — Flinders University, Master of Information Technology</p>
-                <p><em>Project period:</em> Jun 2025 - Dec 2025</p>
-                <p><em>Position:</em> Business Analyst / Project Manager</p>
-                <p><em>Product:</em> On-premises HR &amp; Payroll System</p>
+                <p><strong><em>Project type:</em></strong> Academic Project — Flinders University, Master of Information Technology</p>
+                <p><strong><em>Project period:</em></strong> Jun 2025 - Dec 2025</p>
+                <p><strong><em>Position:</em></strong> Business Analyst / Project Manager</p>
+                <p><strong><em>Headquarter:</em></strong> Australia</p>
+                <p><strong><em>Released:</em></strong> Dec 2025</p>
+                <p><strong><em>Platforms:</em></strong> PC, Tablets</p>
+                <p><strong><em>Products:</em></strong> HR &amp; Payroll System</p>
+                <p><strong><em>Technologies:</em></strong> Java Spring Boot, RESTful APIs, MariaDB, React, Tailwind CSS</p>
             </div>
         </div>
 
@@ -58,7 +62,1053 @@
             <p>Designed improved workflows for the proposed solution, targeting a 60% reduction in manual payroll
                 handling steps and elimination of paper-based time tracking.</p>
         </div>
+
+        <section class="deliverables-section" aria-labelledby="deliverables-heading">
+            <h2 id="deliverables-heading">PROJECT DELIVERABLES</h2>
+            <p class="deliverables-intro">Selected Business Analysis &amp; Project Management work<br>
+                completed as part of the project.</p>
+
+            <div class="deliverables-grid">
+                <article class="deliverable-card">
+                    <p class="deliverable-number">01 REQUIREMENTS</p>
+                    <h3>Business &amp; Functional<br>Requirements</h3>
+                    <button class="deliverable-link" type="button" data-dialog="requirements-dialog">
+                        View Document <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </article>
+
+                <article class="deliverable-card">
+                    <p class="deliverable-number">02 PROCESS DESIGN</p>
+                    <h3>As-Is / To-Be Process<br>Models</h3>
+                    <button class="deliverable-link" type="button" data-dialog="process-dialog">
+                        View Diagrams <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </article>
+
+                <article class="deliverable-card">
+                    <p class="deliverable-number">03 RISK &amp; GOVERNANCE</p>
+                    <h3>Risk, Issue &amp; Decision<br>Register</h3>
+                    <button class="deliverable-link" type="button" data-dialog="governance-dialog">
+                        View Document <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </article>
+
+                <article class="deliverable-card">
+                    <p class="deliverable-number">04 TESTING</p>
+                    <h3>UAT Test Plan &amp;<br>Test Cases</h3>
+                    <button class="deliverable-link" type="button" data-dialog="testing-dialog">
+                        View Document <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <dialog class="deliverable-modal" id="requirements-dialog" aria-labelledby="requirements-title">
+            <div class="deliverable-modal-content">
+                <div class="deliverable-modal-header">
+                    <div>
+                        <p class="deliverable-number">01 REQUIREMENTS</p>
+                        <h2 id="requirements-title">Business &amp; Functional Requirements</h2>
+                    </div>
+                    <button class="modal-close" type="button" aria-label="Close requirements document">&times;</button>
+                </div>
+                <div class="modal-columns requirements-columns">
+                    <section>
+                        <h3>Authentication &amp; Security</h3>
+                        <ul>
+                            <li>Secure admin login/logout with bcrypt password storage.</li>
+                            <li>Session timeout enforcement.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Staff Management</h3>
+                        <ul>
+                            <li>Register, edit, deactivate, and reactivate staff.</li>
+                            <li>Contract types: Full-time, Part-time, and Casual.</li>
+                            <li>Standard and overtime pay rates.</li>
+                            <li>RFID card assignment.</li>
+                            <li>Prevent duplicate staff and card IDs.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Roster Management</h3>
+                        <ul>
+                            <li>Weekly rosters with start/end times and locations.</li>
+                            <li>Default breaks for shifts longer than four hours.</li>
+                            <li>Compliance checks against configured hour limits.</li>
+                            <li>Edit and republish rosters with notifications.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Station Management</h3>
+                        <ul>
+                            <li>Add, edit, and deactivate stations.</li>
+                            <li>Station fields: name, ID, and location description.</li>
+                            <li>Station usage logs.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Clocking &amp; Attendance</h3>
+                        <ul>
+                            <li>Clock in, clock out, and record breaks via RFID card at any station.</li>
+                            <li>Roster validation flags mismatched or unscheduled shifts.</li>
+                            <li>Reason codes for breaks.</li>
+                            <li>Prevent invalid and duplicate entries.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Timesheet &amp; Manual Overrides</h3>
+                        <ul>
+                            <li>View weekly or fortnightly timesheets by staff member.</li>
+                            <li>Manually add, edit, or delete events within the current pay period.</li>
+                            <li>Reason codes required for all overrides.</li>
+                            <li>Logs show original and adjusted values with timestamps.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Reporting</h3>
+                        <ul>
+                            <li>Payslips with detailed earnings.</li>
+                            <li>Payroll report.</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog class="deliverable-modal" id="process-dialog" aria-labelledby="process-title">
+            <div class="deliverable-modal-content">
+                <div class="deliverable-modal-header">
+                    <div>
+                        <p class="deliverable-number">02 PROCESS DESIGN</p>
+                        <h2 id="process-title">As-Is / To-Be Process Models</h2>
+                    </div>
+                    <button class="modal-close" type="button" aria-label="Close process diagrams">&times;</button>
+                </div>
+                <p class="modal-lead">As-Is and To-Be process models for roster management and time tracking and
+                    payroll processing.</p>
+
+                <section class="process-workflow">
+                    <h3>Roster Management</h3>
+                    <figure class="process-diagram">
+                        <figcaption>As-Is</figcaption>
+                        <a href="asset/images/process-roster-as-is.png" target="_blank" rel="noopener"
+                            aria-label="Open the Roster Management As-Is diagram at full size">
+                            <img src="asset/images/process-roster-as-is.png"
+                                alt="Roster Management As-Is process diagram showing roster creation in Excel and distribution to employees by message">
+                        </a>
+                    </figure>
+                    <figure class="process-diagram">
+                        <figcaption>To-Be</figcaption>
+                        <a href="asset/images/process-roster-to-be.png" target="_blank" rel="noopener"
+                            aria-label="Open the Roster Management To-Be diagram at full size">
+                            <img src="asset/images/process-roster-to-be.png"
+                                alt="Roster Management To-Be process diagram showing roster creation, system storage, distribution, and employee receipt">
+                        </a>
+                    </figure>
+                </section>
+
+                <section class="process-workflow">
+                    <h3>Time Tracking &amp; Payroll Processing</h3>
+                    <figure class="process-diagram">
+                        <figcaption>As-Is</figcaption>
+                        <a href="asset/images/process-time-payroll-as-is.png" target="_blank" rel="noopener"
+                            aria-label="Open the Time Tracking and Payroll Processing As-Is diagram at full size">
+                            <img src="asset/images/process-time-payroll-as-is.png"
+                                alt="Time Tracking and Payroll Processing As-Is process diagram showing paper time records, manual review, wage calculation, and payroll reporting">
+                        </a>
+                    </figure>
+                    <figure class="process-diagram">
+                        <figcaption>To-Be</figcaption>
+                        <a href="asset/images/process-time-payroll-to-be.png" target="_blank" rel="noopener"
+                            aria-label="Open the Time Tracking and Payroll Processing To-Be diagram at full size">
+                            <img src="asset/images/process-time-payroll-to-be.png"
+                                alt="Time Tracking and Payroll Processing To-Be process diagram showing digital clocking, automated timesheets, supervisor approval, and payroll generation">
+                        </a>
+                    </figure>
+                </section>
+            </div>
+        </dialog>
+
+        <dialog class="deliverable-modal" id="governance-dialog" aria-labelledby="governance-title">
+            <div class="deliverable-modal-content">
+                <div class="deliverable-modal-header">
+                    <div>
+                        <p class="deliverable-number">03 RISK &amp; GOVERNANCE</p>
+                        <h2 id="governance-title">Risk, Issue &amp; Decision Register</h2>
+                    </div>
+                    <button class="modal-close" type="button" aria-label="Close governance document">&times;</button>
+                </div>
+                <div class="deliverable-table-wrap">
+                    <table class="deliverable-table governance-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Possibility</th>
+                                <th>Impact</th>
+                                <th>Owner</th>
+                                <th>Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Time and Resources</td>
+                                <td>Poor planning at the start of a project leads to stagnant progress and affects the
+                                    team's motivation.</td>
+                                <td>High</td>
+                                <td>High</td>
+                                <td>PM</td>
+                                <td>Coordinate the roadmap with all members and set up a reasonable timetable.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Team Members</td>
+                                <td>Members were unable to participate due to unforeseen circumstances, resulting in
+                                    delays in progress.</td>
+                                <td>Middle</td>
+                                <td>High</td>
+                                <td>PM</td>
+                                <td>Arrange backup and cross-training for key positions.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Team Conflict</td>
+                                <td>Conflict between members, such as developers and testers.</td>
+                                <td>Middle</td>
+                                <td>High</td>
+                                <td>PM</td>
+                                <td>Adjust staff deployment to enhance cooperation and tacit understanding.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Technology Selection</td>
+                                <td>Developers and architects differ on the choice of technology stacks.</td>
+                                <td>Middle</td>
+                                <td>Middle</td>
+                                <td>Dev</td>
+                                <td>Organise technical meetings to identify and document development languages and
+                                    frameworks.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Information Security Control</td>
+                                <td>Only one admin account creates a security risk.</td>
+                                <td>Middle</td>
+                                <td>High</td>
+                                <td>PM</td>
+                                <td>Set up multiple administrator accounts with role-based access control and secure
+                                    login authentication.</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Tool Limitations</td>
+                                <td>Jira's headcount limit resulted in a transfer to Notion, which required a refresher
+                                    course.</td>
+                                <td>Middle</td>
+                                <td>Middle</td>
+                                <td>Scrum Master</td>
+                                <td>Provide SOP and teaching support to reduce adaptation costs.</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Messy Communication Lines</td>
+                                <td>Too many communication platforms disperse information, resulting in missed
+                                    messages.</td>
+                                <td>Middle</td>
+                                <td>Low</td>
+                                <td>Scrum Master</td>
+                                <td>Streamline the main communication platforms, such as Slack and Teams, and establish
+                                    principles of use.</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Planning and Tracking</td>
+                                <td>Lack of progress and quality tracking metrics, such as KPIs and quantitative
+                                    assessments.</td>
+                                <td>Middle</td>
+                                <td>Middle</td>
+                                <td>DevOps</td>
+                                <td>Define quantifiable indicators and build automated reporting systems.</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Delays in Project Delivery</td>
+                                <td>Postponement of duties affects the overall schedule.</td>
+                                <td>High</td>
+                                <td>High</td>
+                                <td>PM</td>
+                                <td>Plan buffer times and track the burndown chart.</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Trust and Quality</td>
+                                <td>Loss of stakeholder confidence due to delays and errors in delivery.</td>
+                                <td>High</td>
+                                <td>High</td>
+                                <td>All Members</td>
+                                <td>Enhance the testing process and maintain immediate and transparent communication in
+                                    case of delays.</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Lack of Risk Control Mechanism</td>
+                                <td>No clear mechanism for tracking and responding to risks.</td>
+                                <td>Middle</td>
+                                <td>High</td>
+                                <td>BA</td>
+                                <td>Introduce a risk log sheet and review it regularly.</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Inadequate Testing</td>
+                                <td>An inadequate testing process leads to early detection of defects.</td>
+                                <td>Middle</td>
+                                <td>High</td>
+                                <td>BA / Tester</td>
+                                <td>Create structured test plans and add regression tests.</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Unstable Deployment Environment</td>
+                                <td>Incorrect or inconsistent deployment environment settings.</td>
+                                <td>Middle</td>
+                                <td>High</td>
+                                <td>DevOps</td>
+                                <td>Standardise deployment scripts and rigorously test staging environments.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog class="deliverable-modal" id="testing-dialog" aria-labelledby="testing-title">
+            <div class="deliverable-modal-content">
+                <div class="deliverable-modal-header">
+                    <div>
+                        <p class="deliverable-number">04 TESTING</p>
+                        <h2 id="testing-title">UAT Test Plan &amp; Test Cases</h2>
+                    </div>
+                    <button class="modal-close" type="button" aria-label="Close testing document">&times;</button>
+                </div>
+                <div class="deliverable-table-wrap uat-table-wrap">
+                    <table class="deliverable-table uat-table">
+                        <thead><tr><th>EPIC</th><th>Test ID</th><th>Goal</th><th>Expected Result</th><th>Outcome</th><th>Retest / Notes</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.1-T01 Admin Login</td>
+                                <td>Successful login</td>
+                                <td>Redirects to Dashboard; “username” visible; sidebar menu visible</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.1-T02 Admin Login</td>
+                                <td>Error shown on failed login</td>
+                                <td>Stays on login page; visible error (e.g., “Incorrect username or password”); password masked</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.1-T03 Admin Login</td>
+                                <td>Password masking</td>
+                                <td>Password can toggle show/hide without clearing the value</td>
+                                <td>Failed (didn’t be masked)</td>
+                                <td>Pass</td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.1-T04 Admin Login</td>
+                                <td>Guard protected routes</td>
+                                <td>Auto-redirect to login with prompt</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.2-T01 Admin Logout</td>
+                                <td>Successful logout</td>
+                                <td>Returns to login page; protected routes blocked; menu no longer visible</td>
+                                <td>Fail (cannot click Admin icon and no logout button)</td>
+                                <td>Pass</td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.2-T02 Admin Logout</td>
+                                <td>Logout works from multiple places</td>
+                                <td>Always returns to login; refresh keeps logged- out state</td>
+                                <td>Fail (cannot click Admin icon and no logout button)</td>
+                                <td>Pass</td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.3-T01 Admin Dashboard &amp; Menu</td>
+                                <td>Sidebar visibility</td>
+                                <td>Menu items present</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.3-T02 Admin Dashboard &amp; Menu</td>
+                                <td>Sidebar navigation</td>
+                                <td>URL updates; target page loads; current item highlighted</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-1 Account Management</td>
+                                <td>US-1.3-T03 Admin Dashboard &amp; Menu</td>
+                                <td>Location preserved on refresh</td>
+                                <td>Remains on the same module; layout/menu persist</td>
+                                <td>Fail (go to fist admin dashboard page)</td>
+                                <td>Pass</td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.1-T01 Register New Staff</td>
+                                <td>Register staff successfully</td>
+                                <td>Success toast; new staff appears in View &amp; Search list; detail page accessible</td>
+                                <td>Pass (Staff detail page always show same information)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.1-T02 Register New Staff</td>
+                                <td>Required- field validation</td>
+                                <td>Field-level “required/inva lid” messages; submission blocked</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.1-T03 Register New Staff</td>
+                                <td>Prevent duplicate ID (front- end level)</td>
+                                <td>Front-end duplicate warning or post-submit error “ID already exists”; stay on form</td>
+                                <td>Cannot test (ID automatic ally generated)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.1-T04 Register New Staff</td>
+                                <td>Range/for mat validation</td>
+                                <td>Numeric validation error; no submit</td>
+                                <td>Fail (No numeric validation, could input alphabet in Phone number and Pay rate field and save it. But it’s doesn’t appear in the list)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.2-T01 View &amp; Search Staff</td>
+                                <td>Load list</td>
+                                <td>Staff list renders; shows basic fields (ID, name, contract type, role…)</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.2-T02 View &amp; Search Staff</td>
+                                <td>Search by name</td>
+                                <td>List filtered to names containing “Ann”; result count shown</td>
+                                <td>Fail (cannot click Filter and no search bar)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.2-T03 View &amp; Search Staff</td>
+                                <td>Search by ID</td>
+                                <td>Only ID = E1001 is shown</td>
+                                <td>Fail (cannot click Filter and no search bar)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.2-T04 View &amp; Search Staff</td>
+                                <td>Clear search</td>
+                                <td>Full list restored</td>
+                                <td>Fail (cannot click Filter and no search bar)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.2-T05 View &amp; Search Staff</td>
+                                <td>Open staff details</td>
+                                <td>Navigates to detail page; full staff info displayed</td>
+                                <td>Fail (the information in the detail page is different from the list)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.3-T01 Edit Staff Information</td>
+                                <td>Form backfill</td>
+                                <td>When click ‘edit’ button, open the backfilled form</td>
+                                <td>Fail</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.3-T02 Edit Staff Information</td>
+                                <td>Edit successfully</td>
+                                <td>Success toast; back to details; values updated</td>
+                                <td>Fail (no prefilled information, can click save button, but nothing change in details, ‘role’ option in table do not match with database)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.3-T02 Edit Staff Information</td>
+                                <td>List reflects changes</td>
+                                <td>The row for this staff shows updated values</td>
+                                <td>Fail (no prefilled information, can click save button, but nothing change in details)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.3-T03 Edit Staff Information</td>
+                                <td>Concurrency hint (front-end)</td>
+                                <td>UI sees successful msg</td>
+                                <td>Fail (No message are shown)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.6-T01 Staff Profile Deactivation/Reactivation</td>
+                                <td>Dynamic action button</td>
+                                <td>Single action button shows Deactivate; if Inactive, shows Reactivate</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.6-T02 Staff Profile Deactivation/Reactivation</td>
+                                <td>Confirm dialog on deactivate</td>
+                                <td>Confirmation dialog with text “Are you sure you want to deactivate this staff profile?”; Confirm/Canc el present</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.6-T03 Staff Profile Deactivation/Reactivation</td>
+                                <td>Deactivate successfully</td>
+                                <td>Status toggles to Inactive immediately; button switches to Reactivate; success toast</td>
+                                <td>Failed (no success toast, user status info cannot changed)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.6-T04 Staff Profile Deactivation/Reactivation</td>
+                                <td>Cancel deactivate</td>
+                                <td>No change to status; no data modified</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-2 Staff Management</td>
+                                <td>US-2.6-T05 Staff Profile Deactivation/Reactivation</td>
+                                <td>Reactivate successfully</td>
+                                <td>Status toggles to Active; button switches back to Deactivate; success toast</td>
+                                <td>Failed (no success toast)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-3 Rostering</td>
+                                <td>FE-R01 UC 3.1</td>
+                                <td>Open weekly grid</td>
+                                <td>Weekly grid visible for selected range; rows=staff, columns=dates; totals column visible</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-3 Rostering</td>
+                                <td>FE-R03 UC 3.2</td>
+                                <td>Block publish on break rule</td>
+                                <td>Publish blocked</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-3 Rostering</td>
+                                <td>FE-R04 UC 3.2</td>
+                                <td>Weekly &gt;38h/ Exceeds 8 hours Restriction</td>
+                                <td>Publish blocked</td>
+                                <td>Fail (No reminder or restriction for exceeding working hours per day or 38 hours per week)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-3 Rostering</td>
+                                <td>FE-R06 UC 3.2</td>
+                                <td>Publish after all handled</td>
+                                <td>Publish succeeds; success toast</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-3 Rostering</td>
+                                <td>FE-R07 UC 3.3</td>
+                                <td>Edit roster</td>
+                                <td>Change info in lists and success toast</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-3 Rostering</td>
+                                <td>FE-R08 UC 3.3</td>
+                                <td>Delete roster</td>
+                                <td>Delete roster in lists</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Attendance</td>
+                                <td>FE-A01 UC 4.1</td>
+                                <td>Apply filters &amp; list</td>
+                                <td>Paginated list shows columns: Staff, Date, Event, Timestamp, Location, Manual flag, Exception badge</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Attendance</td>
+                                <td>FE-A02 UC 4.1</td>
+                                <td>Record details &amp; deep link</td>
+                                <td>Modal shows full details; navigates to Timesheet focused on same day/cell</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Manual Override</td>
+                                <td>FE-M01 UC 4.2</td>
+                                <td>Open Manual Adjustment</td>
+                                <td>Manual Adjustment modal opens; staff/date prefilled</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Manual Override</td>
+                                <td>FE-M02 UC 4.2</td>
+                                <td>Add event with reason</td>
+                                <td>Grid updates; entry marked Manual; totals/exceptions refresh; success toast</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Manual Override</td>
+                                <td>FE-M03 UC 4.2</td>
+                                <td>Prevent future timestamp</td>
+                                <td>Blocking error; no change</td>
+                                <td>Failed</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Manual Override</td>
+                                <td>FE-M04 UC 4.2</td>
+                                <td>Enforce sequence rule</td>
+                                <td>Error “Clock-out must be after clock- in”; no change</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Card Registration</td>
+                                <td>FE-UC- 4.1-001</td>
+                                <td>Register/Edit form shows Card ID optional</td>
+                                <td>Field marked optional; no client- side “required” error</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Card Registration</td>
+                                <td>FE-UC- 4.1-002</td>
+                                <td>Enter valid alphanumeric Card ID and Save</td>
+                                <td>Toast “Registration successful”; staff profile shows Card ID; UI returns to list/detail</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Card Registration</td>
+                                <td>FE-UC- 4.1-003</td>
+                                <td>Enter non- alphanumeric Card ID and Save</td>
+                                <td>Inline/Toast error “Invalid Card ID”; no UI state change to saved</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Card Registration</td>
+                                <td>FE-UC- 4.1-004</td>
+                                <td>Enter duplicate Card ID and Save</td>
+                                <td>Error “Card ID already exists.”; remains on form</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Card Registration</td>
+                                <td>FE-UC- 4.1-005</td>
+                                <td>Cancel in register/edit modal</td>
+                                <td>Modal closes; no changes applied in list/detail</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Card Registration</td>
+                                <td>FE-UC- 4.1-006</td>
+                                <td>Server failure on Save</td>
+                                <td>Toast “Registration failed. Please try again.”; form values preserved</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Re-Register Cards</td>
+                                <td>FE-UC- 4.2-001</td>
+                                <td>Edit page loads with current Card ID visible</td>
+                                <td>Field shows existing Card ID</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Re-Register Cards</td>
+                                <td>FE-UC- 4.2-002</td>
+                                <td>Enter new valid Card ID and Save</td>
+                                <td>Toast “Re- registration successful.”; detail shows new Card ID</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Re-Register Cards</td>
+                                <td>FE-UC- 4.2-003</td>
+                                <td>Enter duplicate Card ID</td>
+                                <td>Error toast “Card ID already exists.”; value not saved</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Re-Register Cards</td>
+                                <td>FE-UC- 4.2-004</td>
+                                <td>Enter non- alphanumeric Card ID</td>
+                                <td>Error toast “Invalid Card ID”</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Re-Register Cards</td>
+                                <td>FE-UC- 4.2-005</td>
+                                <td>Set Card ID blank and Save</td>
+                                <td>Success; UI shows Card ID cleared</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-4 Re-Register Cards</td>
+                                <td>FE-UC- 4.2-006</td>
+                                <td>Cancel in edit modal</td>
+                                <td>No changes applied</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-001</td>
+                                <td>From roster page open Manage Stations</td>
+                                <td>Station list screen opens</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-002</td>
+                                <td>Click Add New Station</td>
+                                <td>Form opens; Station ID is read-only and auto-filled</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-005</td>
+                                <td>Successful create</td>
+                                <td>Toast “Station created successfully.”; list refreshes with new station</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-006</td>
+                                <td>Edit station successfully</td>
+                                <td>Toast “Station updated successfully.”; list refresh</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-007</td>
+                                <td>Activate station</td>
+                                <td>Toast “Station activated successfully.”; status badge updates</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-008</td>
+                                <td>Deactivate station</td>
+                                <td>Toast “Station deactivated successfully.”; status badge updates</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-5 Station Management</td>
+                                <td>FE-UC- 5.1-009</td>
+                                <td>Server error on any action</td>
+                                <td>Toast “Operation failed. Please try again later.”; state unchanged</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 View Attendance</td>
+                                <td>FE-UC- 6.1-001</td>
+                                <td>Open Timesheet from menu and pick a date</td>
+                                <td>UI auto-loads Mon– Sun week including the selected date</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 View Attendance</td>
+                                <td>FE-UC- 6.1-002</td>
+                                <td>Verify table columns</td>
+                                <td>Columns rendered: Date, Staff name, Clock-in, Clock-out, Break duration, Pay rate, Total hours, Total pay, exception (!) indicator</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 View Attendance</td>
+                                <td>FE-UC- 6.1-004</td>
+                                <td>Select a week before last week</td>
+                                <td>Page switches to read-only: New/Edit buttons disabled with tooltip “Manual override is only allowed for the current and previous week (Mon–Sun).”; read-only banner shown</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 View Attendance</td>
+                                <td>FE-UC- 6.1-005</td>
+                                <td>Deep- link/stale edit/create URL for old week</td>
+                                <td>UI blocks and shows error “Manual override only allowed for the current and previous week (Mon–Sun).”</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 View Attendance</td>
+                                <td>FE-UC- 6.1-006</td>
+                                <td>Select a future week</td>
+                                <td>View shows “No records available yet”</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 View Attendance</td>
+                                <td>FE-UC- 6.1-007</td>
+                                <td>Server error while loading</td>
+                                <td>Toast “Operation failed. Please try again later”</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-001</td>
+                                <td>Click a row → Edit modal opens</td>
+                                <td>Edit modal fields: Date read-only, Station read-only; others editable</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-002</td>
+                                <td>Click New record → Create modal</td>
+                                <td>Fields present: Staff selector, Date, Station, Start time, End time, Reason code</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-003</td>
+                                <td>Click Save</td>
+                                <td>Confirmation modal appears: “Are you sure to apply this change?”</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-004</td>
+                                <td>Cancel in create/edit modal</td>
+                                <td>No changes saved</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-005</td>
+                                <td>Delete existing event</td>
+                                <td>Confirmation → toast “Deleted successfully.”; table refreshes</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-006</td>
+                                <td>Show validation errors</td>
+                                <td>Missing fields → “All fields must be completed.”; Clock- out &lt; Clock-in → “Clock-out must be after clock-in.”; Overlap → “Event overlaps an existing record.”; Out-of- week/Future date messages per spec</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-007</td>
+                                <td>Auto 30-min break visual</td>
+                                <td>Creating a ≥4h record with no break shows saved row with Break duration = 30min</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-6 Manual Override</td>
+                                <td>FE-UC- 6.2-008</td>
+                                <td>Post-save immediate refresh</td>
+                                <td>After Save/Delete, the Timesheet table updates instantly reflecting changes</td>
+                                <td>Failed</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.1</td>
+                                <td>Main menu visibility</td>
+                                <td>Main screen displays four options: Clock In / Clock Out / Start Break / End Break. Buttons are large and touch- friendly for farm environments.</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.1</td>
+                                <td>Clock In normal flow</td>
+                                <td>Select Clock In → prompt for card → success message “Your worktime started at HH:MM.” Record immediately visible in admin timesheet.</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.1</td>
+                                <td>Clock Out normal flow</td>
+                                <td>Select Clock Out → prompt for card → success message “Your worktime ended at HH:MM.” Record visible in admin view.</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.1</td>
+                                <td>No roster or wrong station warning</td>
+                                <td>UI displays “No shift scheduled today… flagged for review.” Record still created successfully.</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.1</td>
+                                <td>Invalid/Unregistered card message</td>
+                                <td>Shows “Authentication failed.” or “No matching credential found.” No success message displayed.</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.1</td>
+                                <td>Offline usability</td>
+                                <td>Clock In/Out still possible offline; app shows “cached locally” message. Syncs automatically when online.</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.2</td>
+                                <td>Start break interaction</td>
+                                <td>Select Start Break → dropdown (Meal/Emergency) → scan card → message “Start break at HH:MM.”</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.2</td>
+                                <td>End break interaction</td>
+                                <td>Select End Break → scan card → message “End break at HH:MM.” Break duration automatically calculated and visible in reports.</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-7 Clocking &amp; Breaks</td>
+                                <td>FE-7.2</td>
+                                <td>Start break without Clock In</td>
+                                <td>Displays alert “You must be clocked in to start a break.” Returns to main screen.</td>
+                                <td>Pass</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-8 Attendance &amp; Payroll</td>
+                                <td>FE-8.1</td>
+                                <td>Weekly attendance summary page</td>
+                                <td>Admin can select any Mon–Sun week; table shows Regular/Overtime/Total hours, correctly calculated and read-only.</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-8 Attendance &amp; Payroll</td>
+                                <td>FE-8.2</td>
+                                <td>Export &amp; send pay slip flow</td>
+                                <td>From Attendance → click Export → navigate to Payroll (latest period) → select staff → click Submit → message “Pay slips successfully sent.” Successful entries removed.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-8 Attendance &amp; Payroll</td>
+                                <td>FE-8.2</td>
+                                <td>Partial email failure UI</td>
+                                <td>Failed entries remain in list; error message shown; retry possible.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-8 Attendance &amp; Payroll</td>
+                                <td>FE-8.2</td>
+                                <td>PDF content verification</td>
+                                <td>PDF includes correct pay period, hours, rates, wages, subtotals, and total consistent with on-screen data.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>EPIC-8 Attendance &amp; Payroll</td>
+                                <td>FE-8.2</td>
+                                <td>Email sending constraint</td>
+                                <td>Pay slips sent only to each staff’s registered email. Clear success/failure notification displayed.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </dialog>
     </div>
+
+    <script>
+        document.querySelectorAll('[data-dialog]').forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                document.getElementById(trigger.dataset.dialog).showModal();
+            });
+        });
+
+        document.querySelectorAll('.deliverable-modal').forEach((dialog) => {
+            dialog.querySelector('.modal-close').addEventListener('click', () => dialog.close());
+            dialog.addEventListener('click', (event) => {
+                if (event.target === dialog) {
+                    dialog.close();
+                }
+            });
+        });
+    </script>
 </body>
 
 <footer>
