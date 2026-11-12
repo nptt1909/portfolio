@@ -293,6 +293,11 @@ header {
     padding: 50px;
 }
 
+.about-summary {
+    width: 100%;
+    padding: 0;
+}
+
 .timeline {
     display: flex;
     align-items: center;
